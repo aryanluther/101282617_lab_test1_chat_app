@@ -13,4 +13,4 @@ mongoose.connect('mongodb+srv://aryan:lucifer@cluster0.sw9nz.mongodb.net/user?re
 
 app.use(userRouter);
 
-app.listen(8081, () => { console.log('Server is running...') });
+app.listen(3000, () => { console.log('Server is running...') });

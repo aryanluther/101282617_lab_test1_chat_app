@@ -23,13 +23,10 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: [true, 'Please enter a unique password'],
-        trim: true
     },
-    date :{
+    creaton :{
         type : Date,
-        default : Date.now
     }
-
 })
 
 const user = mongoose.model("user", userSchema);

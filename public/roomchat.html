@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP3133 Lab Test 1</title>
+    <Link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <div class="align-items-center ">
+    <input id="username" type="hidden" name="username" value="">
+
+    <h1 class="text-primary">Test-Chat-app</h1>
+    <div id="messageBox" 
+        style="height:400px; width:450px; border: 1px solid black; overflow: auto;">
+    </div>
+    <p id="typing" style="visibility: hidden;">User is typing...</p>
+
+    <input id="msg" type="text" name="msg" value="" placeholder="Enter message here..." 
+        onkeypress="typing(true)" onchange="typing(false)" 
+        style="width:400px;">
+    <button type="button" name="sendMsgButton" onclick="sendMsg()">
+        Send
+    </button>
+
+    <br/><br/>
+
+    <select name="room" id="room">
+        <option value="news">News</option>
+        <option value="covid19">COVID19</option>
+        <option value="nodejs">NodeJS</option>
+    </select>
+
+    <button type = "button" name = "joinRoomButton" onclick = "joinRoom()">
+        Join Room
+    </button>
+
+    <button type = "button" name = "leaveRoomButton" onclick = "leaveRoom()">
+        Leave Room
+    </button>
+    
+    <br/><br/>
+
+    <button type="button" name="logoutButton" onclick="logout()">
+        Logout
+    </button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/main.js"></script>
+  </div>
+</body>
+</html>
